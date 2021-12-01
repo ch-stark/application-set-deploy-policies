@@ -2,6 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
   name: policy-disable-storage-class-in-namespace
+  namespace: policies
   annotations:
     policy.open-cluster-management.io/standards: NIST-CSF
     policy.open-cluster-management.io/categories: PR.IP Information Protection Processes and Procedures
@@ -38,6 +39,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-disable-storage-class-in-namespace
+  namespace: policies
 placementRef:
   name: placement-policy-disable-storage-class-in-namespace
   kind: PlacementRule
@@ -51,6 +53,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-policy-disable-storage-class-in-namespace
+  namespace: policies
 spec:
   clusterConditions:
     - status: 'True'
